@@ -1,0 +1,77 @@
+/* Shared button styles inspired by the supplied UI reference. */
+.button,
+.hero .button,
+.closing-cta .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-height: 50px;
+  padding: 12px 22px;
+  border: 1px solid #ef795d;
+  border-radius: 16px;
+  background: #151312;
+  color: #ffad91;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .1px;
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, background .2s, border-color .2s;
+}
+.button.primary,
+.hero .button.primary,
+.closing-cta .button.primary {
+  border-color: transparent;
+  background: linear-gradient(110deg, #ffbd62 0%, #ff9164 50%, #fa735d 100%);
+  color: #34170e;
+  box-shadow: 0 7px 18px #f7754926;
+}
+.button:hover,
+.hero .button:hover {
+  background: #2a1b16;
+  border-color: #ffb08a;
+  box-shadow: 0 7px 20px #ed764018;
+  transform: translateY(-2px);
+}
+.button.primary:hover,
+.hero .button.primary:hover,
+.closing-cta .button.primary:hover {
+  background: linear-gradient(110deg, #ffca80, #ffa575 50%, #ff8974);
+  border-color: transparent;
+  box-shadow: 0 10px 24px #f7754933;
+}
+.hero .button .button-arrow {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 22px;
+  font-weight: 400;
+  transform: none;
+}
+.button:active,
+.hero .button:active { transform: translateY(0); box-shadow: none; }
+.button:focus-visible,
+.hero .button:focus-visible { outline: 2px solid #ffd2b4; outline-offset: 5px; }
+.contact a {
+  background: linear-gradient(110deg, #ffbd62, #fa735d);
+  color: #34170e;
+  border-radius: 14px;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  box-shadow: 0 4px 12px #f775491a;
+  transition: filter .2s;
+}
+.contact a:hover { filter: brightness(1.1); }
+@media (prefers-reduced-motion: reduce) {
+  .button, .hero .button, .contact a { transition: none; }
+  .button:hover, .hero .button:hover { transform: none; }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#030303">
+  <meta name="robots" content="noindex">
+  <title>Page Not Found | Stackly</title>
+  <style>
+    :root { color-scheme: dark; --background: #030303; --text: #f3f3ef; --muted: #a2a6a8; --accent: #e94325; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; background: var(--background); color: var(--text); font-family: Arial, Helvetica, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 2px solid #ff967f; outline-offset: 6px; }
+    .container { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+    .header { min-height: 104px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #262626; }
+    .brand { display: inline-flex; align-items: center; gap: 8px; font-size: 19px; font-weight: 700; letter-spacing: -.8px; }
+    .brand-mark { display: inline-block; font-size: 34px; line-height: 1; transform: rotate(-25deg); }
+    .support { color: #bebebe; font-size: 13px; transition: color .2s; }
+    .support:hover, .footer a:hover { color: #ff795d; }
+    main { flex: 1; display: grid; align-items: center; padding-block: 68px 80px; }
+    .error-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(32px, 6vw, 96px); }
+    .error-art { position: relative; min-width: 0; aspect-ratio: 1; display: grid; place-items: center; isolation: isolate; overflow: hidden; border: 1px solid #34302e; border-radius: 24px; background: radial-gradient(ellipse at 50% 65%, #64231345, transparent 65%), linear-gradient(135deg, #181616, #090909); }
+    .error-art::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(#ffffff05 1px, transparent 1px), linear-gradient(90deg, #ffffff05 1px, transparent 1px); background-size: 40px 40px; }
+    .art-label { position: absolute; top: 26px; left: 26px; color: #b1a8a4; font-size: 10px; letter-spacing: 2px; }
+    .status { display: flex; align-items: center; gap: 8px; position: absolute; right: 26px; bottom: 26px; color: #b1a8a4; font-size: 10px; letter-spacing: 1.5px; }
+    .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .error-number { font-size: clamp(100px, 14vw, 200px); font-weight: 700; line-height: 1; letter-spacing: -.08em; padding-right: .08em; color: #e9e5e1; }
+    .error-number span { color: var(--accent); }
+    .art-rule { position: absolute; left: 26px; bottom: 29px; width: 54px; height: 2px; background: #e94325; }
+    .eyebrow { margin: 0 0 22px; color: #ff795d; font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; }
+    h1 { margin: 0 0 24px; font-size: clamp(36px, 4vw, 56px); line-height: 1.08; letter-spacing: -1.8px; }
+    .description { max-width: 420px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.75; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 18px; min-height: 50px; padding: 14px 22px; border: 1px solid #393939; border-radius: 9px; background: transparent; color: inherit; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: background .2s, border-color .2s; }
+    button:focus-visible { outline: 2px solid #ff967f; outline-offset: 6px; }
+    .button:hover { background: #222; border-color: #666; }
+    .button.primary { background: var(--accent); border-color: var(--accent); color: white; }
+    .button.primary:hover { background: #cf371d; border-color: #cf371d; }
+    .help { margin: 32px 0 0; padding-top: 24px; border-top: 1px solid #282828; color: #929697; font-size: 13px; line-height: 1.7; }
+    .help a { color: #dedede; text-decoration: underline; text-underline-offset: 4px; }
+    .footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-block: 26px; border-top: 1px solid #262626; color: #939393; font-size: 12px; line-height: 1.6; }
+    .footer p { margin: 0; }
+    .footer nav { display: flex; flex-wrap: wrap; gap: 24px; }
+    @media (max-width: 700px) {
+      .container { width: calc(100% - 40px); }
+      .header { min-height: 80px; }
+      main { padding-block: 36px 48px; }
+      .error-layout { grid-template-columns: minmax(0, 1fr); gap: 36px; max-width: 480px; margin-inline: auto; }
+      .error-art { aspect-ratio: 1.65; border-radius: 18px; }
+      .error-number { font-size: clamp(100px, 26vw, 150px); }
+      .art-label { top: 18px; left: 18px; font-size: 9px; }
+      .status { bottom: 18px; right: 18px; font-size: 9px; }
+      .art-rule { left: 18px; bottom: 22px; width: 32px; }
+      h1 { letter-spacing: -1px; }
+      .eyebrow { margin-bottom: 16px; }
+      .footer { padding-block: 22px; }
+    }
+    @media (max-width: 360px) { .actions { flex-direction: column; } .support { font-size: 12px; } }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+    .brand { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; padding: 9px 0; border-radius: 8px; background: transparent; }
+    .brand-logo { display: block; width: 180px; max-width: 100%; height: auto; }
+    .footer-brand .brand-logo, .footer > .brand .brand-logo { width: 200px; }
+    @media (max-width: 440px) { .header .brand-logo { width: 120px; } }
+    @media (max-width: 360px) { .header .brand-logo { width: 100px; } }
+  </style>
+  <link id="button-styles" rel="stylesheet" href="/assets/buttons.css">
+  <script>
+    if (window.location.protocol === 'file:') {
+      document.getElementById('button-styles').href = 'assets/buttons.css';
+    }
+  </script>
+</head>
+<body>
+  <header class="header container">
+    <a class="brand" href="/index.html" aria-label="Stackly home"><img class="brand-logo" src="/assets/images/stackly-logo.webp" width="500" height="100" alt="Stackly"></a>
+    <a class="support" href="mailto:hello@Stackly.net.in">Contact support <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="container">
+    <div class="error-layout">
+      <div class="error-art" aria-hidden="true">
+        <span class="art-label">STACKLY / INDUSTRIAL SERVICES</span>
+        <div class="error-number">4<span>0</span>4</div>
+        <span class="art-rule"></span>
+        <span class="status">PAGE NOT FOUND</span>
+      </div>
+      <section aria-labelledby="error-title">
+        <p class="eyebrow">Error 404 · Page not found</p>
+        <h1 id="error-title">Let’s get you<br>back on track.</h1>
+        <p class="description">The page you’re looking for may have moved, been removed, or the address may be incorrect. We’ll help you find your way.</p>
+        <div class="actions">
+          <button class="button" id="go-back" type="button"><span aria-hidden="true">←</span> Go Back</button>
+          <a class="button primary" href="/index.html"><span aria-hidden="true">←</span> Back to home</a>
+        </div>
+        <p class="help">Need a hand finding something? <a href="mailto:hello@Stackly.net.in">Talk to our team</a>.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="footer container">
+    <a class="brand" href="/index.html" aria-label="Stackly home"><img class="brand-logo" src="/assets/images/stackly-logo.webp" width="500" height="100" alt="Stackly"></a>
+    <p>&copy; 2026 Stackly Technologies. All rights reserved.</p>
+    <nav aria-label="Footer"><a href="/index.html#about">About us</a><a href="/index.html#contact">Contact</a></nav>
+  </footer>
+  <script>
+    document.getElementById('go-back').addEventListener('click', () => {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.assign('index.html');
+      }
+    });
+    if (window.location.protocol === 'file:') {
+      document.querySelectorAll('.brand-logo').forEach(image => {
+        image.src = 'assets/images/stackly-logo.webp';
+      });
+    }
+    // Keep local previews usable while retaining root-relative links on hosted error URLs.
+    if (window.location.protocol === 'file:') {
+      document.querySelectorAll('a[href^="/index.html"]').forEach(link => {
+        link.setAttribute('href', link.getAttribute('href').slice(1));
+      });
+    }
+  </script>
+  <script>
+    const motionScript = document.createElement('script');
+    motionScript.src = window.location.protocol === 'file:'
+      ? 'assets/js/scroll-animations.js'
+      : '/assets/js/scroll-animations.js';
+    document.body.appendChild(motionScript);
+  </script>
+</body>
+</html>

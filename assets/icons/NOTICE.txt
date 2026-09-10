@@ -1,0 +1,1 @@
+Icons derived from lucide-static v0.468.0 (ISC license), converted from SVG to WebP.
