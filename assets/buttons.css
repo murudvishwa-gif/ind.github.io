@@ -8,13 +8,13 @@
   gap: 22px;
   min-height: 50px;
   padding: 12px 22px;
-  border: 1px solid #ef795d;
+  border: 2px solid #ef795d;
   border-radius: 16px;
-  background: #151312;
-  color: #ffad91;
+  background: #25201e;
+  color: #ffffff;
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.4;
   letter-spacing: .1px;
   box-shadow: none;
@@ -42,20 +42,6 @@
   background: linear-gradient(110deg, #ffca80, #ffa575 50%, #ff8974);
   border-color: transparent;
   box-shadow: 0 10px 24px #f7754933;
-}
-.hero .button .button-arrow {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  font-size: 22px;
-  font-weight: 400;
-  transform: none;
 }
 .button:active,
 .hero .button:active { transform: translateY(0); box-shadow: none; }

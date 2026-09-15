@@ -11,7 +11,7 @@
     html { scroll-behavior: smooth; overflow-x: clip; }
     body { overflow-x: clip; }
     img { max-width: 100%; }
-    main, section, .footer-columns > *, .partnership-inner > * { min-width: 0; }
+    main, section, .footer-columns >*, .partnership-inner >* { min-width: 0; }
     h1, h2, h3, p { overflow-wrap: break-word; }
     .actions { flex-wrap: wrap; }
     body { margin: 0; background: var(--background); color: var(--text); font-family: Arial, Helvetica, sans-serif; }
@@ -28,7 +28,6 @@
     .navigation a:hover { color: #ff795d; }
     .contact { display: flex; gap: 6px; align-items: center; }
     .contact a { background: var(--accent); border-radius: 11px; padding: 20px 17px; font-size: 14px; white-space: nowrap; }
-    .contact .arrow { font-size: 23px; padding: 13px 17px; }
     .menu-toggle { display: none; border: 1px solid #454545; border-radius: 8px; background: #242424; color: white; padding: 10px 14px; cursor: pointer; }
     .hero { position: relative; padding: 66px 0 78px; isolation: isolate; }
     .hero::before { content: ''; position: absolute; z-index: -1; top: 0; left: 50%; transform: translateX(-50%); width: min(1100px, 100%); height: 440px; background: radial-gradient(ellipse at 50% 0, #52190f 0, #210b06 34%, transparent 72%); pointer-events: none; }
@@ -43,18 +42,14 @@
     .button.primary:hover { background: #f45637; }
     .hero .actions { align-items: center; gap: 16px; }
     .hero .get-started { gap: 24px; min-height: 56px; padding: 8px 9px 8px 24px; border: 1px solid #ff856b; border-radius: 14px; background: linear-gradient(145deg, #f56543, #e94325); color: #fff; font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: .2px; box-shadow: inset 0 1px 0 #ffffff30, 0 6px 18px #e9432526; transition: background .2s, box-shadow .2s, transform .2s; }
-    .get-started .button-arrow { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border: 1px solid #ffffff30; border-radius: 9px; background: #ffffff18; font-size: 21px; line-height: 1; transition: background .2s, transform .2s; }
     .hero .get-started:hover { background: linear-gradient(145deg, #ff7554, #ed4c2c); box-shadow: inset 0 1px 0 #ffffff40, 0 9px 22px #e9432538; transform: translateY(-2px); }
-    .get-started:hover .button-arrow { background: #ffffff28; transform: translateX(2px); }
     .hero .get-started:active { transform: translateY(0); box-shadow: inset 0 1px 3px #0002; }
     .hero .get-started:focus-visible { outline: 2px solid #ffd0c4; outline-offset: 5px; }
     .hero .learn-more { gap: 24px; min-height: 56px; padding: 8px 9px 8px 24px; border: 1px solid #454545; border-radius: 14px; background: linear-gradient(145deg, #232323, #121212); color: #f3f3ef; font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: .2px; box-shadow: inset 0 1px 0 #ffffff0d; }
-    .learn-more .button-arrow { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border: 1px solid #ffffff18; border-radius: 9px; background: #ffffff08; font-size: 21px; line-height: 1; transition: background .2s, transform .2s; }
     .hero .learn-more:hover { background: #292321; border-color: #b96754; transform: translateY(-2px); }
-    .learn-more:hover .button-arrow { background: #e9432520; transform: translateY(2px); }
     .hero .learn-more:active { transform: translateY(0); }
     .hero-media { position: relative; height: 495px; margin: 15px auto 0; width: calc(100% - 170px); overflow: hidden; border: 1px solid #283b3c; border-radius: 25px; background: #152329; box-shadow: 0 16px 45px #5b180f20; }
-    .hero-media > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 56%; }
+    .hero-media >img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 56%; }
     .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, #00171999, transparent 65%); pointer-events: none; }
     .badge { position: absolute; z-index: 1; background: #243b3ce8; border-radius: 21px; padding: 15px 20px; }
     .growth { top: 22px; left: 22px; }
@@ -72,10 +67,8 @@
     .feature-card:hover, .feature-card:focus-visible { border-color: #e9432599; box-shadow: 0 14px 32px #0006; transform: translateY(-4px); }
     .feature-photo { display: block; flex-shrink: 0; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 13px; margin-bottom: 20px; }
     .feature-top { display: flex; align-items: center; justify-content: space-between; margin: 0 12px 16px; }
-    .feature-top > .feature-icon { box-sizing: content-box; padding: 9px; border: 1px solid #333; border-radius: 11px; }
+    .feature-top >.feature-icon { box-sizing: content-box; padding: 9px; border: 1px solid #333; border-radius: 11px; }
     .feature-icon { display: block; width: 22px; height: 22px; filter: invert(37%) sepia(95%) saturate(3437%) hue-rotate(350deg) brightness(99%) contrast(98%); }
-    .feature-arrow { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #3b3b3b; border-radius: 50%; color: #b8b8b8; font-size: 20px; line-height: 1; transition: color .25s, background .25s, border-color .25s; }
-    .feature-card:hover .feature-arrow, .feature-card:focus-visible .feature-arrow { color: white; background: var(--accent); border-color: var(--accent); }
     .feature-card h3 { margin: 0 12px 10px; font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -.3px; }
     .feature-card p { margin: 0 12px; color: #a6acae; font-size: 14px; line-height: 1.7; }
     .sectors { padding: 0 28px 90px; text-align: center; border-bottom: 1px solid #35170e; }
@@ -83,8 +76,8 @@
     .sectors .section-description { color: #d2d2d2; }
     .sector-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; max-width: 1030px; margin: 42px auto 0; }
     .sector-card { position: relative; overflow: hidden; isolation: isolate; aspect-ratio: 175 / 208; border: 1px solid #472419; border-radius: 23px; background: #172225; box-shadow: 0 15px 28px #4b180f20; }
-    .sector-card > img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .3s; }
-    .sector-card:hover > img { transform: scale(1.045); }
+    .sector-card >img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .3s; }
+    .sector-card:hover >img { transform: scale(1.045); }
     .sector-card::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, #00000005 30%, #200e0980 70%, #100907d9); pointer-events: none; }
     .demand-label { position: absolute; top: 15px; left: 15px; z-index: 2; padding: 7px 12px; border: 1px solid #66808555; border-radius: 20px; background: #09232bce; color: #f3f3ef; font-size: 11px; line-height: 1; }
     .sector-card h3 { position: absolute; bottom: 22px; left: 8px; right: 8px; z-index: 2; margin: 0; font-size: 18px; line-height: 1.3; font-weight: 600; }
@@ -108,8 +101,7 @@
     .partnership-copy h2 { margin: 0 0 24px; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.22; letter-spacing: -.5px; }
     .partnership-intro { margin: 0 0 32px; color: var(--muted); font-size: 17px; line-height: 1.5; }
     .partnership-benefits { list-style: none; padding: 0; margin: 0; display: grid; gap: 25px; }
-    .partnership-benefits li { display: grid; grid-template-columns: 21px minmax(0, 1fr); gap: 15px; align-items: start; }
-    .check-mark { display: inline-grid; place-items: center; width: 19px; height: 19px; border: 2px solid var(--accent); border-radius: 50%; color: var(--accent); font-size: 12px; line-height: 1; margin-top: 2px; }
+    .partnership-benefits li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 15px; align-items: start; }
     .partnership-benefits h3 { margin: 0 0 6px; font-size: 16px; line-height: 1.4; font-weight: 600; }
     .partnership-benefits p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
     .how-it-works { padding: 98px 28px 100px; text-align: center; border-bottom: 1px solid #82301b; }
@@ -170,7 +162,7 @@
     dialog button { cursor: pointer; color: white; }
     @media (min-width: 1600px) { .container { width: min(1360px, calc(100% - 120px)); } }
     @media (max-width: 1100px) { .navigation { gap: 22px; padding-inline: 20px; } .header { padding-inline: 20px; } .contact a { padding-inline: 12px; } .hero-media { width: calc(100% - 70px); height: 410px; } .partners { margin-inline: 35px; font-size: 14px; } }
-    @media (max-width: 800px) { .container { width: calc(100% - 32px); } .header { margin-top: 16px; height: 70px; position: relative; } .menu-toggle { display: block; } .contact { margin-left: auto; } .contact .arrow { display: none; } .contact a { padding: 13px; font-size: 12px; } .navigation { display: none; position: absolute; left: 0; right: 0; top: 78px; z-index: 5; padding: 24px; background: #222; flex-wrap: wrap; } .navigation.open { display: flex; } .hero { padding-top: 58px; padding-bottom: 55px; } h1 { font-size: clamp(36px, 6.9vw, 54px); } .description { font-size: 16px; max-width: 540px; padding-inline: 14px; margin: 30px auto; } .hero-media { width: 100%; height: 370px; margin-top: 28px; border-radius: 20px; } .partners { margin: 0; gap: 25px; justify-content: center; flex-wrap: wrap; font-size: 12px; letter-spacing: 3px; } .clients { right: 16px; } .trusted { margin-top: 35px; } .about h2 { font-size: 32px; } }
+    @media (max-width: 800px) { .container { width: calc(100% - 32px); } .header { margin-top: 16px; height: 70px; position: relative; } .menu-toggle { display: block; } .contact { margin-left: auto; } .contact a { padding: 13px; font-size: 12px; } .navigation { display: none; position: absolute; left: 0; right: 0; top: 78px; z-index: 5; padding: 24px; background: #222; flex-wrap: wrap; } .navigation.open { display: flex; } .hero { padding-top: 58px; padding-bottom: 55px; } h1 { font-size: clamp(36px, 6.9vw, 54px); } .description { font-size: 16px; max-width: 540px; padding-inline: 14px; margin: 30px auto; } .hero-media { width: 100%; height: 370px; margin-top: 28px; border-radius: 20px; } .partners { margin: 0; gap: 25px; justify-content: center; flex-wrap: wrap; font-size: 12px; letter-spacing: 3px; } .clients { right: 16px; } .trusted { margin-top: 35px; } .about h2 { font-size: 32px; } }
     @media (max-width: 440px) { .header { padding-inline: 12px; gap: 12px; } .brand { font-size: 14px; } .brand-mark { font-size: 29px; } .hero .eyebrow { font-size: 9px; letter-spacing: 2px; } h1 { font-size: 37px; } .hero-media { height: 320px; } .badge { padding: 10px 13px; border-radius: 14px; } .growth { top: 14px; left: 14px; } .growth strong { font-size: 21px; } }
     @media (min-width: 801px) and (max-width: 1050px) { .header { position: relative; } .menu-toggle { display: block; } .contact { margin-left: auto; } .navigation { display: none; position: absolute; left: 0; right: 0; top: 86px; z-index: 5; padding: 24px; background: #222; flex-wrap: wrap; } .navigation.open { display: flex; } }
     @media (max-width: 360px) { .header { gap: 8px; padding-inline: 8px; } .contact a { padding: 12px 8px; font-size: 10px; } .menu-toggle { padding: 9px; } h1 { font-size: 32px; } .partners { gap: 18px; } }
@@ -178,28 +170,44 @@
 
     .brand { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; padding: 9px 0; border-radius: 8px; background: transparent; }
     .brand-logo { display: block; width: 180px; max-width: 100%; height: auto; }
-    .footer-brand .brand-logo, .footer > .brand .brand-logo { width: 200px; }
+    .footer-brand .brand-logo, .footer >.brand .brand-logo { width: 200px; }
     @media (max-width: 440px) { .header .brand-logo { width: 120px; } }
     @media (max-width: 360px) { .header .brand-logo { width: 100px; } }
   </style>
   <link rel="stylesheet" href="assets/buttons.css">
+  <style>
+    .navigation { gap: clamp(12px, 2.2vw, 32px); padding-inline: 20px; }
+    @media (min-width: 901px) and (max-width: 1150px) { .header { padding-inline: 18px; gap: 16px; } .header .brand-logo { width: 120px; } .navigation { gap: 14px; padding-inline: 14px; } .contact a { font-size: 12px; padding-inline: 12px; } }
+  </style>
+<link rel="stylesheet" href="assets/components.css">
+<link rel="stylesheet" href="assets/header.css">
+<link rel="stylesheet" href="assets/responsive.css">
 </head>
 <body>
   <header class="header container">
-    <a class="brand" href="#home" aria-label="Stackly home"><img class="brand-logo" src="assets/images/stackly-logo.webp" width="500" height="100" alt="Stackly"></a>
-    <nav class="navigation" id="navigation" aria-label="Main navigation">
-      <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About us</a><a href="404.html">Contact us</a><a href="404.html">Blogs</a>
-    </nav>
-    <div class="contact"><a href="404.html">Get in touch with us</a><a class="arrow" href="404.html" aria-label="Get in touch">↗</a></div>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="Toggle navigation">☰</button>
-  </header>
+<a href="index.html" aria-label="Stackly home">
+<img class="brand-logo" src="assets/images/stackly-logo.webp" width="500" height="100" alt="Stackly">
+</a>
+<nav class="navigation" id="navigation" aria-label="Main navigation">
+<a href="index.html" aria-current="page">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About us</a>
+<a href="contact.html">Contact us</a>
+<a href="blogs.html">Blogs</a>
+</nav>
+<div class="header-auth" aria-label="Account">
+<a class="button" href="login.html">Login</a>
+<a class="button primary" href="signup.html">Sign Up</a>
+</div>
+<button class="menu-toggle" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+</header>
   <main>
     <section class="hero container" id="home" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">Turning ideas into reality</p>
         <h1 id="hero-title">Transforming Raw<br>into Perfect Products</h1>
         <p class="description">Delivering unmatched quality with every product we create. Our team combines state-of-the-art technology and expert craftsmanship to meet your expectations.</p>
-        <div class="actions"><a class="button primary get-started" href="404.html"><span>Get Started</span><span class="button-arrow" aria-hidden="true">↗</span></a><a class="button learn-more" href="#about"><span>Learn More</span><span class="button-arrow" aria-hidden="true">↓</span></a></div>
+        <div class="actions"><a class="button primary get-started" href="contact.html"><span>Get Started</span></a><a class="button learn-more" href="#about"><span>Learn More</span></a></div>
       </div>
       <figure class="hero-media">
         <img src="assets/images/hero.webp" alt="Blue performance car showing precision-crafted automotive bodywork" width="1800" height="1000" fetchpriority="high">
@@ -213,42 +221,42 @@
       <h2 id="about-title">Crafting Perfection<br>for Your Business Needs</h2>
       <p class="section-description">Delivering precision-crafted solutions tailored to your business.</p>
       <div class="features-grid" id="services">
-        <a class="feature-card" href="404.html">
-          <img class="feature-photo" src="assets/images/quality-assurance.webp" width="700" height="438" loading="lazy" decoding="async" alt="Engineer inspecting industrial equipment for quality assurance">
-          <div class="feature-top"><img class="feature-icon" src="assets/icons/badge-check.webp" width="22" height="22" alt=""><span class="feature-arrow" aria-hidden="true">↗</span></div>
+        <a class="feature-card ui-card" href="services.html">
+
+          <div class="feature-top"><img class="feature-icon" src="assets/icons/badge-check.webp" width="22" height="22" alt=""></div>
           <h3>Unmatched Quality</h3>
           <p>State-of-the-art technology and robust testing at every stage so each product meets the highest standards.</p>
-        </a>
-        <a class="feature-card" href="404.html">
-          <img class="feature-photo" src="assets/images/tailored-solutions.webp" width="700" height="438" loading="lazy" decoding="async" alt="Technical manufacturing work for custom industrial solutions">
-          <div class="feature-top"><img class="feature-icon" src="assets/icons/cog.webp" width="22" height="22" alt=""><span class="feature-arrow" aria-hidden="true">↗</span></div>
+</a>
+        <a class="feature-card ui-card" href="services.html">
+
+          <div class="feature-top"><img class="feature-icon" src="assets/icons/cog.webp" width="22" height="22" alt=""></div>
           <h3>Tailored Solutions</h3>
           <p>Custom manufacturing designed around your specification, volumes and delivery windows.</p>
-        </a>
-        <a class="feature-card" href="404.html">
-          <img class="feature-photo" src="assets/images/expert-craftsmanship.webp" width="700" height="438" loading="lazy" decoding="async" alt="Metalworker crafting metal with precision tools">
-          <div class="feature-top"><img class="feature-icon" src="assets/icons/shield-check.webp" width="22" height="22" alt=""><span class="feature-arrow" aria-hidden="true">↗</span></div>
+</a>
+        <a class="feature-card ui-card" href="services.html">
+
+          <div class="feature-top"><img class="feature-icon" src="assets/icons/shield-check.webp" width="22" height="22" alt=""></div>
           <h3>Expert Craftsmanship</h3>
           <p>Decades of traditional skill combined with modern automation for consistently reliable output.</p>
-        </a>
-        <a class="feature-card" href="404.html">
-          <img class="feature-photo" src="assets/images/on-time-delivery.webp" width="700" height="438" loading="lazy" decoding="async" alt="Warehouse and logistics operations for reliable deliveries">
-          <div class="feature-top"><img class="feature-icon" src="assets/icons/timer.webp" width="22" height="22" alt=""><span class="feature-arrow" aria-hidden="true">↗</span></div>
+</a>
+        <a class="feature-card ui-card" href="services.html">
+
+          <div class="feature-top"><img class="feature-icon" src="assets/icons/timer.webp" width="22" height="22" alt=""></div>
           <h3>On-Time Delivery</h3>
           <p>Disciplined scheduling and reliable supply chains keep your orders arriving exactly when promised.</p>
-        </a>
-        <a class="feature-card" href="404.html">
-          <img class="feature-photo" src="assets/images/exceptional-support.webp" width="700" height="438" loading="lazy" decoding="async" alt="Business team collaborating to support customer projects">
-          <div class="feature-top"><img class="feature-icon" src="assets/icons/headset.webp" width="22" height="22" alt=""><span class="feature-arrow" aria-hidden="true">↗</span></div>
+</a>
+        <a class="feature-card ui-card" href="services.html">
+
+          <div class="feature-top"><img class="feature-icon" src="assets/icons/headset.webp" width="22" height="22" alt=""></div>
           <h3>Exceptional Support</h3>
           <p>A dedicated engineering contact from first quote through installation and long-term service.</p>
-        </a>
-        <a class="feature-card" href="404.html">
-          <img class="feature-photo" src="assets/images/competitive-pricing.webp" width="700" height="438" loading="lazy" decoding="async" alt="Business analytics used for cost planning and competitive pricing">
-          <div class="feature-top"><img class="feature-icon" src="assets/icons/tag.webp" width="22" height="22" alt=""><span class="feature-arrow" aria-hidden="true">↗</span></div>
+</a>
+        <a class="feature-card ui-card" href="services.html">
+
+          <div class="feature-top"><img class="feature-icon" src="assets/icons/tag.webp" width="22" height="22" alt=""></div>
           <h3>Competitive Pricing</h3>
           <p>Lean processes and smart sourcing give you high-grade manufacturing at a fair, transparent price.</p>
-        </a>
+</a>
       </div>
     </section>
     <section class="sectors container" aria-labelledby="sectors-title">
@@ -256,43 +264,35 @@
       <p class="section-description">Bringing innovation and expertise to a wide range of sectors.</p>
       <div class="sector-grid">
         <!-- Locally saved substitute photos; original Figma image exports were unavailable. -->
-        <a class="sector-card" href="404.html">
+        <a class="sector-card" href="services.html">
           <img src="assets/images/consumer-goods.webp" width="640" height="760" loading="lazy" alt="Warehouse aisles filled with packaged goods">
           <span class="demand-label">High Demand</span><h3>Consumer Goods</h3>
-        </a>
-        <a class="sector-card" href="404.html">
+</a>
+        <a class="sector-card" href="services.html">
           <img src="assets/images/construction.webp" width="640" height="760" loading="lazy" alt="Construction work on a building site">
           <span class="demand-label">High Demand</span><h3>Construction</h3>
-        </a>
-        <a class="sector-card" href="404.html">
+</a>
+        <a class="sector-card" href="services.html">
           <img src="assets/images/aerospace.webp" width="640" height="760" loading="lazy" alt="Technical specialist working in a manufacturing environment">
           <span class="demand-label">High Demand</span><h3>Aerospace Manufacturing</h3>
-        </a>
-        <a class="sector-card" href="404.html">
+</a>
+        <a class="sector-card" href="services.html">
           <img src="assets/images/electronics.webp" width="640" height="760" loading="lazy" alt="Industrial metalworking with bright sparks">
           <span class="demand-label">High Demand</span><h3>Consumer Electronics</h3>
-        </a>
+</a>
       </div>
     </section>
     <section class="why-choose container" aria-labelledby="why-title">
       <h2 id="why-title">Why Choose Stackly</h2>
       <p class="section-description">A robust set of next-generation features specifically designed to take the guesswork out of fleet tracking and logistics dispatch.</p>
       <div class="benefits-grid">
-        <article class="benefit-card">
-          <div class="benefit-icon"><img class="feature-icon" src="assets/icons/map-pin.webp" width="22" height="22" alt=""></div>
-          <h3>Real-Time Tracking</h3>
-          <p>Keep an eye on active cargo with live map updates, dynamic status sharing, and predictive delays calculation.</p>
-        </article>
-        <article class="benefit-card">
+        <article class="benefit-card ui-card">
           <div class="benefit-icon"><img class="feature-icon" src="assets/icons/zap.webp" width="22" height="22" alt=""></div>
-          <h3>Automated Dispatch</h3>
+          <h3><a href="contact.html">Automated Dispatch</a></h3>
           <p>Eliminate manually coordinated load matching. AI dispatch automatically schedules the most optimal drivers.</p>
         </article>
-        <article class="benefit-card">
-          <div class="benefit-icon"><img class="feature-icon" src="assets/icons/chart-no-axes-column.webp" width="22" height="22" alt=""></div>
-          <h3>Smart Analytics</h3>
-          <p>Consolidate fuel records, driver timesheets, and delivery performance metrics into beautiful automated reports.</p>
-        </article>
+        undefined
+        undefined
       </div>
     </section>
     <section class="partnership container" aria-labelledby="partnership-title">
@@ -302,9 +302,9 @@
           <h2 id="partnership-title">Unlock the Advantages of Partnering with Stackly</h2>
           <p class="partnership-intro">Enjoy the peace of mind that comes with our on-time delivery and flexible manufacturing solutions, designed to adapt to your needs.</p>
           <ul class="partnership-benefits">
-            <li><span class="check-mark" aria-hidden="true">✓</span><div><h3>Custom-Tailored Solutions</h3><p>We design and manufacture products specifically to match your unique needs.</p></div></li>
-            <li><span class="check-mark" aria-hidden="true">✓</span><div><h3>Precision and Quality Assurance</h3><p>Every product we ship meets the highest standards of precision.</p></div></li>
-            <li><span class="check-mark" aria-hidden="true">✓</span><div><h3>On-Time Delivery and Flexibility</h3><p>We prioritise timely service and offer flexible solutions to adapt to you.</p></div></li>
+            <li><div><h3>Custom-Tailored Solutions</h3><p>We design and manufacture products specifically to match your unique needs.</p></div></li>
+            <li><div><h3>Precision and Quality Assurance</h3><p>Every product we ship meets the highest standards of precision.</p></div></li>
+            <li><div><h3>On-Time Delivery and Flexibility</h3><p>We prioritise timely service and offer flexible solutions to adapt to you.</p></div></li>
           </ul>
         </div>
       </div>
@@ -356,16 +356,16 @@
   <footer class="site-footer container">
     <div class="footer-columns">
       <div class="footer-brand">
-        <a class="brand" href="#home" aria-label="Stackly home"><img class="brand-logo" src="assets/images/stackly-logo.webp" width="500" height="100" alt="Stackly"></a>
-        <p>Digitizing global logistics operations, scaling freight management, and optimizing supply chain networks.</p>
+        <p><strong>Stackly</strong></p>
+        <p>Precision engineering and industrial manufacturing solutions built around your business.</p>
       </div>
       <nav class="footer-column" aria-label="Company">
         <h2>Company</h2>
-        <ul class="footer-links"><li><a href="#about">About Us</a></li><li><a href="#services">Our Solutions</a></li><li><a href="mailto:hello@Stackly.net.in?subject=Career%20enquiry">Careers</a></li><li><a href="#contact">Contact</a></li></ul>
+        <ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Solutions</a></li><li><a href="mailto:hello@Stackly.net.in?subject=Career%20enquiry">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
       </nav>
       <nav class="footer-column" aria-label="Resources">
         <h2>Resources</h2>
-        <ul class="footer-links"><li><a href="404.html">Blogs &amp; Articles</a></li><li><a href="404.html">API Documentation</a></li><li><a href="mailto:hello@Stackly.net.in?subject=Support%20enquiry">Support Center</a></li><li><a href="#how-it-works">Integrations</a></li></ul>
+        <ul class="footer-links"><li><a href="blogs.html">Blogs &amp; Articles</a></li><li><a href="services.html">Service Capabilities</a></li><li><a href="mailto:hello@Stackly.net.in?subject=Support%20enquiry">Support Center</a></li><li><a href="#how-it-works">Integrations</a></li></ul>
       </nav>
       <div class="footer-column" id="contact">
         <h2>Contact</h2>
@@ -375,29 +375,27 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 Stackly Technologies. All rights reserved.</p>
-      <div class="social-links" aria-label="Social media">
-        <a href="404.html" aria-label="LinkedIn"><img src="assets/icons/linkedin.webp" alt="" width="17" height="17"></a>
-        <a href="404.html" aria-label="Twitter"><img src="assets/icons/twitter.webp" alt="" width="17" height="17"></a>
-        <a href="404.html" aria-label="Instagram"><img src="assets/icons/instagram.webp" alt="" width="17" height="17"></a>
-      </div>
+      
     </div>
   </footer>
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const navigation = document.querySelector('.navigation');
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', () =>{
       const open = toggle.getAttribute('aria-expanded') !== 'true';
       toggle.setAttribute('aria-expanded', String(open));
       navigation.classList.toggle('open', open);
     });
-    navigation.addEventListener('click', event => {
+    navigation.addEventListener('click', event =>{
       if (event.target.closest('a')) {
         toggle.setAttribute('aria-expanded', 'false');
         navigation.classList.remove('open');
       }
     });
   </script>
-  <script src="assets/js/scroll-animations.js" defer></script>
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/scroll-animations.js" defer></script>
 </body>
 </html>
 

@@ -61,7 +61,7 @@
 
     .brand { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; padding: 9px 0; border-radius: 8px; background: transparent; }
     .brand-logo { display: block; width: 180px; max-width: 100%; height: auto; }
-    .footer-brand .brand-logo, .footer > .brand .brand-logo { width: 200px; }
+    .footer-brand .brand-logo, .footer >.brand .brand-logo { width: 200px; }
     @media (max-width: 440px) { .header .brand-logo { width: 120px; } }
     @media (max-width: 360px) { .header .brand-logo { width: 100px; } }
   </style>
@@ -71,11 +71,13 @@
       document.getElementById('button-styles').href = 'assets/buttons.css';
     }
   </script>
+<link id="responsive-styles" rel="stylesheet" href="/assets/responsive.css">
+<script>if (location.protocol === "file:") document.getElementById("responsive-styles").href = "assets/responsive.css";</script>
 </head>
 <body>
   <header class="header container">
     <a class="brand" href="/index.html" aria-label="Stackly home"><img class="brand-logo" src="/assets/images/stackly-logo.webp" width="500" height="100" alt="Stackly"></a>
-    <a class="support" href="mailto:hello@Stackly.net.in">Contact support <span aria-hidden="true">↗</span></a>
+    <a class="support" href="mailto:hello@Stackly.net.in">Contact support</a>
   </header>
   <main class="container">
     <div class="error-layout">
@@ -90,8 +92,8 @@
         <h1 id="error-title">Let’s get you<br>back on track.</h1>
         <p class="description">The page you’re looking for may have moved, been removed, or the address may be incorrect. We’ll help you find your way.</p>
         <div class="actions">
-          <button class="button" id="go-back" type="button"><span aria-hidden="true">←</span> Go Back</button>
-          <a class="button primary" href="/index.html"><span aria-hidden="true">←</span> Back to home</a>
+          <button class="button" id="go-back" type="button">Go Back</button>
+          <a class="button primary" href="/index.html">Back to home</a>
         </div>
         <p class="help">Need a hand finding something? <a href="mailto:hello@Stackly.net.in">Talk to our team</a>.</p>
       </section>
@@ -100,34 +102,40 @@
   <footer class="footer container">
     <a class="brand" href="/index.html" aria-label="Stackly home"><img class="brand-logo" src="/assets/images/stackly-logo.webp" width="500" height="100" alt="Stackly"></a>
     <p>&copy; 2026 Stackly Technologies. All rights reserved.</p>
-    <nav aria-label="Footer"><a href="/index.html#about">About us</a><a href="/index.html#contact">Contact</a></nav>
+    <nav aria-label="Footer"><a href="/about.html">About us</a><a href="/contact.html">Contact</a></nav>
   </footer>
   <script>
-    document.getElementById('go-back').addEventListener('click', () => {
-      if (window.history.length > 1) {
+    document.getElementById('go-back').addEventListener('click', () =>{
+      if (window.history.length >1) {
         window.history.back();
       } else {
         window.location.assign('index.html');
       }
     });
     if (window.location.protocol === 'file:') {
-      document.querySelectorAll('.brand-logo').forEach(image => {
+      document.querySelectorAll('.brand-logo').forEach(image =>{
         image.src = 'assets/images/stackly-logo.webp';
       });
     }
     // Keep local previews usable while retaining root-relative links on hosted error URLs.
     if (window.location.protocol === 'file:') {
-      document.querySelectorAll('a[href^="/index.html"]').forEach(link => {
+      document.querySelectorAll('a[href^="/"]').forEach(link =>{
         link.setAttribute('href', link.getAttribute('href').slice(1));
       });
     }
   </script>
   <script>
-    const motionScript = document.createElement('script');
-    motionScript.src = window.location.protocol === 'file:'
-      ? 'assets/js/scroll-animations.js'
-      : '/assets/js/scroll-animations.js';
-    document.body.appendChild(motionScript);
+    (async () => {
+      const base = location.protocol === 'file:' ? 'assets/' : '/assets/';
+      for (const path of ['vendor/gsap.min.js', 'vendor/ScrollTrigger.min.js', 'js/scroll-animations.js']) {
+        await new Promise(resolve => {
+          const script = document.createElement('script');
+          script.src = base + path;
+          script.onload = script.onerror = resolve;
+          document.body.appendChild(script);
+        });
+      }
+    })();
   </script>
 </body>
 </html>

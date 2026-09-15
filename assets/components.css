@@ -1,0 +1,159 @@
+/* Shared components based on the supplied Figma component overview. */
+:root {
+  --component-border: #414344;
+  --component-radius: 10px;
+  --component-accent: #e94325;
+  --component-copy: #aeb1b1;
+  --component-surface: #0d0f0f;
+}
+
+.ui-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--component-border);
+  border-radius: var(--component-radius);
+  background: var(--component-surface);
+  box-shadow: none;
+  text-align: left;
+  transition: border-color .22s ease, background-color .22s ease;
+}
+
+.ui-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(145deg, #83392199 0%, #322b2680 32%, #15181800 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease;
+}
+
+.ui-card:hover,
+.ui-card:focus-within {
+  border-color: #a46a53;
+  background-color: #151818;
+  box-shadow: none;
+  transform: none;
+}
+
+.ui-card:hover::before,
+.ui-card:focus-within::before {
+  opacity: 1;
+}
+
+a.ui-card:focus-visible {
+  outline: 2px solid #ff9476;
+  outline-offset: 4px;
+}
+
+.ui-card h3 {
+  margin: 18px 0 10px;
+  color: #f3f3ef;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -.2px;
+}
+
+.ui-card p {
+  margin: 0;
+  color: var(--component-copy);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ui-card .feature-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.ui-card .feature-top > .feature-icon,
+.ui-card > .icon {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.ui-card .benefit-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  border: 1px solid #e9432533;
+  border-radius: 50%;
+  background: #e943251a;
+}
+
+.ui-card .benefit-icon .feature-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.features-grid {
+  gap: 18px;
+  max-width: 1040px;
+}
+
+.benefits-grid {
+  gap: 18px;
+}
+
+.navigation {
+  gap: 5px;
+  min-height: 46px;
+  padding: 5px;
+  border: 1px solid #454847;
+  border-radius: 8px;
+  background: #252a28;
+}
+
+.navigation a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 5px;
+  color: #d7dbd8;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: color .18s ease, background-color .18s ease;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible,
+.navigation a[aria-current='page'] {
+  color: #fff;
+  background: var(--component-accent);
+}
+
+.navigation a:focus-visible {
+  outline: 2px solid #ffb29c;
+  outline-offset: 2px;
+}
+
+@media (max-width: 1150px) and (min-width: 701px) {
+  .navigation { gap: 3px; padding: 5px; }
+  .navigation a { padding: 9px 10px; }
+}
+
+@media (max-width: 700px) {
+  .ui-card { padding: 22px; }
+  .features-grid { gap: 14px; }
+  .navigation { padding: 10px; gap: 5px; }
+  .navigation a { padding: 12px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-card, .ui-card::before, .navigation a { transition: none; }
+}

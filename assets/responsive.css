@@ -1,0 +1,74 @@
+/* Shared sizing rules loaded after each page's own styles. */
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 24px; }
+body { min-width: 280px; }
+main, section, article, nav, form, .grid > *, .split > *, .footer-grid > *,
+.auth-shell > *, .field, .stat, .page-heading > *, .panel-title > * { min-width: 0; }
+h1, h2, h3, p, address, label, .footer-links a, .footer-grid a { overflow-wrap: anywhere; }
+img, video, svg { max-width: 100%; }
+.button { max-width: 100%; text-align: center; }
+.grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.contact-photo { height: 100%; min-height: 400px; }
+.header .navigation { max-height: calc(100svh - 150px); overflow-y: auto; }
+.header .navigation a { min-height: 44px; display: flex; align-items: center; }
+.header .menu-toggle { min-height: 44px; }
+.sidebar { overflow-y: auto; overscroll-behavior: contain; }
+.main-shell { min-width: 0; }
+.main-shell main { max-width: 1600px; margin-inline: auto; }
+.tabs, .toolbar, .panel-title, .dialog-actions { flex-wrap: wrap; }
+.table-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+.activity-item > div { min-width: 0; }
+.activity-item .avatar { flex-shrink: 0; }
+.dashboard-footer { flex-wrap: wrap; }
+.scroll-progress { position: fixed; inset: 0 0 auto; height: 3px; z-index: 100;
+  background: linear-gradient(90deg, #ffbd62, #fa735d); transform: scaleX(0); transform-origin: left; pointer-events: none; }
+@media (min-width: 701px) and (max-width: 1050px) {
+  .grid:not(.four):not(.two) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .testimonial-grid { grid-template-columns: 1fr; max-width: 700px; margin-inline: auto; }
+}
+@media (max-width: 700px) {
+  input:not([type=checkbox]):not([type=radio]), select, textarea { font-size: 16px; }
+  .button, .filter, .submit-button, .social-options button, .mobile-menu,
+  .main-shell button, .sidebar nav button { min-height: 44px; }
+  .header.container { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; padding-block: 12px; }
+  .header .header-auth { grid-column: 2; grid-row: 1; margin-left: 0; }
+  .header .menu-toggle { grid-column: 2; grid-row: 2; justify-self: end; margin: 0; }
+  .header .navigation { top: 100%; }
+  .header .brand-logo { width: 110px; height: auto; }
+  .grid.two, .split { grid-template-columns: minmax(0, 1fr); }
+  .split > .contact-photo { height: 260px; min-height: 0; }
+  .testimonials { padding: 48px 16px; }
+  .testimonial-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .testimonial-card { padding: 24px 20px; }
+  .stats-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
+  .stats.container { padding: 40px 16px; }
+  .stat dd { font-size: clamp(26px, 7vw, 36px); }
+  .closing-cta { padding: 48px 20px; }
+  .footer-columns, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .auth-main { padding-inline: 20px; }
+  .auth-tagline { font-size: 18px; }
+  .role-selection { flex-wrap: wrap; }
+  .role-selection label { flex-basis: 120px; }
+  .main-shell .toolbar > * { width: 100%; min-width: 0; }
+  .activity-item { flex-wrap: wrap; }
+  .activity-item small { margin-left: 47px; }
+}
+@media (max-width: 420px) {
+  .header .brand-logo { width: 96px; }
+  .header-auth .button { padding-inline: 10px; }
+  .grid.four, .footer-columns, .footer-grid, .field-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero .actions { flex-direction: column; align-items: stretch; padding-inline: 16px; }
+  .hero .actions .button { width: 100%; }
+  .hero-media { height: 280px; }
+  .hero h1 { font-size: clamp(30px, 9vw, 37px); }
+  .form-panel { padding: 18px; }
+  .newsletter input, .newsletter .button { flex-basis: 100%; min-width: 0; }
+  .main-shell .stats { grid-template-columns: minmax(0, 1fr); }
+  .panel-title > button, .panel-title > select { width: 100%; }
+  .social-options { grid-template-columns: minmax(0, 1fr); }
+  dialog { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .scroll-progress { display: none; }
+}

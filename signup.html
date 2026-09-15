@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>Create Your Account | Stackly</title>
+<link rel="stylesheet" href="assets/auth.css">
+<script src="assets/js/pages.js" defer>
+</script>
+<script src="assets/js/auth.js" defer>
+</script>
+<link rel="stylesheet" href="assets/responsive.css">
+</head>
+<body class="signup">
+<main class="auth-shell">
+<div class="auth-art">
+<img src="assets/images/auth-logistics.webp" alt="Airplane over a connected container port at dusk" width="1120" height="800">
+</div>
+<section class="auth-main" aria-labelledby="auth-title">
+<div class="auth-content">
+<a class="auth-brand" href="index.html" aria-label="Stackly home">
+<img src="assets/images/stackly-logo.webp" alt="Stackly" width="500" height="100">
+</a>
+<p class="auth-tagline">Digitalize Your Industrial<br>Operations With Just<br>One Click.</p>
+<h1 id="auth-title">Create Your Account</h1>
+<p class="auth-intro">Register to establish your dedicated client portal workspace.</p>
+<form data-form="signup">
+<div class="field-grid">
+<div class="field">
+<label for="first-name">First Name</label>
+<input id="first-name" name="first-name" type="text" placeholder="Alexander" autocomplete="given-name" required>
+</div>
+<div class="field">
+<label for="last-name">Last Name</label>
+<input id="last-name" name="last-name" type="text" placeholder="Hamilton" autocomplete="family-name" required>
+</div>
+<div class="field full">
+<label for="email">Company Email</label>
+<input id="email" name="email" type="email" placeholder="alexander@hamilton.com" autocomplete="email" required>
+</div>
+<div class="field">
+<div class="label-row">
+<label for="password">Password</label>
+</div>
+<div class="password-wrap">
+<input id="password" name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required>
+</div>
+</div>
+<div class="field">
+<div class="label-row">
+<label for="confirm">Confirm Password</label>
+</div>
+<div class="password-wrap">
+<input id="confirm" name="confirm" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required>
+</div>
+</div>
+</div>
+<label class="terms">
+<input type="checkbox" name="terms" required>
+<span>I agree to the <a href="#terms-dialog" data-dialog="terms-dialog">Terms of Engagement</a> and <a href="#privacy-dialog" data-dialog="privacy-dialog">Privacy Notice</a>.</span>
+</label>
+<button class="submit-button" type="submit">Create Account Workspace</button>
+<p class="form-status" role="status" aria-live="polite">
+</p>
+</form>
+<div class="divider">OR SIGN UP WITH</div>
+<div class="social-options" aria-label="Social sign-in options">
+<button type="button" data-provider="Google">Google</button>
+<button type="button" data-provider="LinkedIn">LinkedIn</button>
+<button type="button" data-provider="Microsoft">Microsoft</button>
+</div>
+<p id="provider-status" class="form-status" role="status" aria-live="polite">
+</p>
+<p class="auth-bottom">Already have an account? <a href="login.html">Log In</a>
+</p>
+</div>
+</section>
+</main>
+<dialog id="terms-dialog" aria-labelledby="terms-title">
+<h2 id="terms-title">Terms of Engagement</h2>
+<p>This account form is a preview. Submitting it does not create an account or enter you into a service agreement. Project terms must be agreed directly with the Stackly team.</p>
+<form method="dialog">
+<button>Close</button>
+</form>
+</dialog>
+<dialog id="privacy-dialog" aria-labelledby="privacy-title">
+<h2 id="privacy-title">Privacy Notice</h2>
+<p>This preview does not send or store your account details or passwords. Account authentication and social sign-in are not connected. Passwords are cleared when the preview form is submitted.</p>
+<form method="dialog">
+<button>Close</button>
+</form>
+</dialog>
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/scroll-animations.js" defer></script>
+</body>
+</html>
