@@ -127,7 +127,7 @@
   <script>
     (async () => {
       const base = location.protocol === 'file:' ? 'assets/' : '/assets/';
-      for (const path of ['vendor/gsap.min.js', 'vendor/ScrollTrigger.min.js', 'js/scroll-animations.js']) {
+      for (const path of ['js/box-effects.js', 'vendor/gsap.min.js', 'vendor/ScrollTrigger.min.js', 'js/scroll-animations.js']) {
         await new Promise(resolve => {
           const script = document.createElement('script');
           script.src = base + path;

@@ -72,3 +72,38 @@ img, video, svg { max-width: 100%; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .scroll-progress { display: none; }
 }
+
+/* Box feedback: translate is independent of GSAP's reveal transforms. */
+:is(.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card,
+    .stat, .stats > div, .step, .process-step, .panel, .form-panel, .article-feature,
+    .hero-media, .partnership-photo, .badge, .faq details, .error-art,
+    .role-selection label, .workspace, .activity-item) {
+  transition: translate .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  :is(.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card,
+      .stat, .stats > div, .step, .process-step, .panel, .form-panel, .article-feature,
+      .hero-media, .partnership-photo, .badge, .faq details, .error-art,
+      .role-selection label, .workspace, .activity-item):hover {
+    translate: 0 -5px;
+    border-color: #ff9877;
+    box-shadow: 0 12px 28px #0003, 0 0 0 1px #ff987799;
+  }
+}
+:is(.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card,
+    .stat, .stats > div, .step, .process-step, .panel, .form-panel, .article-feature,
+    .hero-media, .partnership-photo, .badge, .faq details, .error-art,
+    .role-selection label, .workspace, .activity-item):is(:focus-visible, :has(:focus-visible), .is-touch-active) {
+  border-color: #ff9877;
+  box-shadow: 0 8px 22px #0003, 0 0 0 2px #ff987799;
+}
+.is-touch-active { translate: 0 -2px; }
+@media (prefers-reduced-motion: reduce) {
+  :is(.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card,
+      .stat, .stats > div, .step, .process-step, .panel, .form-panel, .article-feature,
+      .hero-media, .partnership-photo, .badge, .faq details, .error-art,
+      .role-selection label, .workspace, .activity-item) {
+    translate: none !important;
+    transition: none !important;
+  }
+}

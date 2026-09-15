@@ -75,6 +75,15 @@
   font: inherit;
   cursor: pointer;
 }
+@media (min-width: 1001px) {
+  .header.container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+  .header > a:first-child { justify-self: start; }
+  .header .navigation { justify-self: center; }
+  .header .header-auth { justify-self: end; margin-left: 0; }
+}
 @media (min-width: 701px) and (max-width: 1150px) {
   .header .navigation { gap: 3px; }
   .header .navigation a { padding: 9px 10px; }
