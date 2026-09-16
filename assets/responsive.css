@@ -1,6 +1,11 @@
 /* Shared sizing rules loaded after each page's own styles. */
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: 24px; }
-body { min-width: 280px; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 24px; overflow-x: clip; scrollbar-gutter: stable; overscroll-behavior-x: none; }
+body { min-width: 0; width: 100%; margin-inline: 0; overflow-x: clip; }
+/* Clip decorative motion at the viewport without creating a sticky-header scroll container. */
+*, *::before, *::after { box-sizing: border-box; }
+.stats-window { max-width: 100%; contain: inline-size; }
+.auth-art { min-width: 0; overflow: hidden; }
+.mobile-navigation-dialog { overflow-x: hidden; }
 main, section, article, nav, form, .grid > *, .split > *, .footer-grid > *,
 .auth-shell > *, .field, .stat, .page-heading > *, .panel-title > * { min-width: 0; }
 h1, h2, h3, p, address, label, .footer-links a, .footer-grid a { overflow-wrap: anywhere; }
@@ -75,34 +80,41 @@ img, video, svg { max-width: 100%; }
 
 /* Box feedback: translate is independent of GSAP's reveal transforms. */
 :is(.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card,
-    .stat, .stats > div, .step, .process-step, .panel, .form-panel, .article-feature,
+    .stat, .stats > div:not(.stats-window), .step, .process-step, .panel, .form-panel, .article-feature,
     .hero-media, .partnership-photo, .badge, .faq details, .error-art,
-    .role-selection label, .workspace, .activity-item) {
+    .role-selection label, .workspace, .activity-item, .editorial-card, .hero-explorer, .profile-section, .social-logo-link, .social-options button) {
   transition: translate .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 @media (hover: hover) and (pointer: fine) {
   :is(.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card,
-      .stat, .stats > div, .step, .process-step, .panel, .form-panel, .article-feature,
+      .stat, .stats > div:not(.stats-window), .step, .process-step, .panel, .form-panel, .article-feature,
       .hero-media, .partnership-photo, .badge, .faq details, .error-art,
-      .role-selection label, .workspace, .activity-item):hover {
+      .role-selection label, .workspace, .activity-item, .editorial-card, .hero-explorer, .profile-section, .social-logo-link, .social-options button):hover {
     translate: 0 -5px;
     border-color: #ff9877;
     box-shadow: 0 12px 28px #0003, 0 0 0 1px #ff987799;
   }
 }
 :is(.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card,
-    .stat, .stats > div, .step, .process-step, .panel, .form-panel, .article-feature,
+    .stat, .stats > div:not(.stats-window), .step, .process-step, .panel, .form-panel, .article-feature,
     .hero-media, .partnership-photo, .badge, .faq details, .error-art,
-    .role-selection label, .workspace, .activity-item):is(:focus-visible, :has(:focus-visible), .is-touch-active) {
+    .role-selection label, .workspace, .activity-item, .editorial-card, .hero-explorer, .profile-section, .social-logo-link, .social-options button):is(:focus-visible, :has(:focus-visible), .is-touch-active) {
   border-color: #ff9877;
   box-shadow: 0 8px 22px #0003, 0 0 0 2px #ff987799;
 }
 .is-touch-active { translate: 0 -2px; }
 @media (prefers-reduced-motion: reduce) {
   :is(.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card,
-      .stat, .stats > div, .step, .process-step, .panel, .form-panel, .article-feature,
+      .stat, .step, .process-step, .panel, .form-panel, .article-feature,
       .hero-media, .partnership-photo, .badge, .faq details, .error-art,
-      .role-selection label, .workspace, .activity-item) {
+      .role-selection label, .workspace, .activity-item, .editorial-card,
+      .hero-explorer, .profile-section, .social-logo-link, .social-options button) { translate: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card,
+      .stat, .stats > div:not(.stats-window), .step, .process-step, .panel, .form-panel, .article-feature,
+      .hero-media, .partnership-photo, .badge, .faq details, .error-art,
+      .role-selection label, .workspace, .activity-item, .editorial-card, .hero-explorer, .profile-section, .social-logo-link, .social-options button) {
     translate: none !important;
     transition: none !important;
   }

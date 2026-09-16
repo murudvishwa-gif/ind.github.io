@@ -1,6 +1,6 @@
 // Touch feedback for static and dynamically rendered boxes; scrolling stays native.
 (() => {
-  const selector = '.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card, .stat, .stats > div, .step, .process-step, .panel, .form-panel, .article-feature, .hero-media, .partnership-photo, .badge, .faq details, .error-art, .role-selection label, .workspace, .activity-item';
+  const selector = '.ui-card, .card, .feature-card, .sector-card, .benefit-card, .testimonial-card, .stat, .stats > div:not(.stats-window), .step, .process-step, .panel, .form-panel, .article-feature, .hero-media, .partnership-photo, .badge, .faq details, .error-art, .role-selection label, .workspace, .activity-item, .editorial-card, .hero-explorer, .profile-section, .social-logo-link, .social-options button';
   let box, startX, startY, timer;
   const clear = () => {
     clearTimeout(timer);
