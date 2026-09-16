@@ -33,10 +33,16 @@ const issues = [];
     }).map(el => el.tagName + '.' + el.className).slice(0,8));
     if (overflow.length) issues.push(`${file} @${width}: ${overflow.join(', ')}`);
     if (await page.locator('.header-auth').count()) {
-     if (!await page.locator('.header-auth a').first().isVisible()) issues.push(`${file} @${width}: hidden account buttons`);
+     if (width > 1000 && !await page.locator('.header-auth a').first().isVisible()) issues.push(`${file} @${width}: hidden account buttons`);
      if (width <= 1000) {
       await page.locator('.menu-toggle').click();
       if (!await page.locator('.navigation').isVisible()) issues.push(`${file}: menu did not open`);
+      if (!await page.locator('.header-auth a').first().isVisible()) issues.push(`${file}: mobile account links missing`);
+      const bounds = await page.locator('.mobile-navigation-dialog').boundingBox();
+      if (Math.abs(bounds.width - width) > 1 || Math.abs(bounds.height - 900) > 1) issues.push(`${file}: menu is not full screen`);
+      await page.keyboard.press('Escape');
+      if (await page.locator('.menu-toggle').getAttribute('aria-expanded') !== 'false') issues.push(`${file}: Escape did not close menu`);
+      await page.locator('.menu-toggle').click();
       await page.locator('.navigation a').first().click();
      }
     }
@@ -58,7 +64,11 @@ const issues = [];
    await page.setViewportSize({width,height:900});
    await page.goto(base + '/index.html');
    await page.waitForTimeout(1200);
-   if (!await page.evaluate(() => window.gsap && window.ScrollTrigger && ScrollTrigger.getAll().length > 0)) issues.push('GSAP not initialized');
+   if (!await page.locator('[data-revealed=true]').count()) issues.push('Intersection Observer reveals not initialized');
+   await page.locator('#stage-manufacture').click();
+   if (!/expert-craftsmanship/.test(await page.locator('.hero-media > img').getAttribute('src'))) issues.push('Hero stage image did not change');
+   await page.locator('#stage-manufacture').press('ArrowRight');
+   if (await page.locator('#stage-verify').getAttribute('aria-selected') !== 'true') issues.push('Hero keyboard navigation failed');
    await page.locator('.testimonials').scrollIntoViewIfNeeded();
    await page.waitForTimeout(1200);
    if (await page.locator('.testimonial-card').first().evaluate(el => getComputedStyle(el).opacity) !== '1') issues.push('Reveal incomplete');
@@ -68,15 +78,16 @@ const issues = [];
    if (await page.locator('.scroll-progress').count()) issues.push('Reduced motion did not clean up');
    await page.emulateMedia({reducedMotion:'no-preference'});
   }
-  await page.route('**/assets/vendor/**',route=>route.abort());
-  await page.goto(base + '/about.html');
-  await page.waitForTimeout(800);
-  if (!await page.locator('h1').isVisible()) issues.push('Fallback heading hidden');
+  const fallback = await browser.newPage();
+  await fallback.addInitScript(() => { delete window.IntersectionObserver; });
+  await fallback.goto(base + '/about.html');
+  if (!await fallback.locator('h1').isVisible() || !await fallback.locator('.photo-card').first().isVisible()) issues.push('Fallback content hidden');
+  await fallback.close();
   const noJS = await browser.newPage({javaScriptEnabled:false,viewport:{width:390,height:844}});
   await noJS.goto(base + '/index.html');
   if (!await noJS.locator('h1').isVisible() || !await noJS.locator('.header-auth').isVisible()) issues.push('No-JavaScript content hidden');
   await noJS.close();
-  console.log(issues.length ? issues.join('\n') : 'PASS: layouts, menus, dashboard views, GSAP reveals, reduced motion, and fallback.');
+  console.log(issues.length ? issues.join('\n') : 'PASS: layouts, menus, dashboard views, IO reveals, interactive hero, reduced motion, and fallback.');
   if (issues.length) process.exitCode=1;
  } finally { await browser.close(); server.close(); }
 })();

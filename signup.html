@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#090d0d">
 <title>Create Your Account | Stackly</title>
 <link rel="stylesheet" href="assets/auth.css">
 <script src="assets/js/pages.js" defer>
@@ -11,14 +11,20 @@
 <script src="assets/js/auth.js" defer>
 </script>
 <link rel="stylesheet" href="assets/responsive.css">
+<link rel="stylesheet" href="assets/header.css">
+<link rel="stylesheet" href="assets/site-updates.css">
+<script src="assets/js/site-navigation.js" defer></script>
+<link rel="stylesheet" href="assets/motion.css">
+<script src="assets/js/hero-interaction.js" defer></script>
+<link rel="stylesheet" href="assets/account-theme.css">
 </head>
-<body class="signup">
+<body class="signup"><header class="header container"><a class="brand" href="index.html" aria-label="Stackly home"><img class="brand-logo" src="assets/images/stackly-logo.webp" width="140" height="28" alt="Stackly"></a><nav class="navigation" id="site-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="blogs.html">Blog</a><a href="contact.html">Contact</a></nav><div class="header-auth"><a class="button" href="login.html">Login</a><a class="button primary" href="signup.html">Sign Up</a></div><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-navigation" aria-expanded="false">☰</button></header>
 <main class="auth-shell">
-<div class="auth-art">
+<div class="auth-art"><div class="auth-art-caption"><span>Connected by precision</span><h2>Your next chapter.<br>Built with Stackly.</h2><p>One workspace for your projects, production updates and manufacturing partnerships.</p></div>
 <img src="assets/images/auth-logistics.webp" alt="Airplane over a connected container port at dusk" width="1120" height="800">
 </div>
 <section class="auth-main" aria-labelledby="auth-title">
-<div class="auth-content">
+<div class="auth-content"><a class="back-home" href="index.html">← Back to Home</a>
 <a class="auth-brand" href="index.html" aria-label="Stackly home">
 <img src="assets/images/stackly-logo.webp" alt="Stackly" width="500" height="100">
 </a>
@@ -60,7 +66,7 @@
 <input type="checkbox" name="terms" required>
 <span>I agree to the <a href="#terms-dialog" data-dialog="terms-dialog">Terms of Engagement</a> and <a href="#privacy-dialog" data-dialog="privacy-dialog">Privacy Notice</a>.</span>
 </label>
-<button class="submit-button" type="submit">Create Account Workspace</button>
+<button class="submit-button" type="submit">Sign Up</button>
 <p class="form-status" role="status" aria-live="polite">
 </p>
 </form>
@@ -86,13 +92,11 @@
 </dialog>
 <dialog id="privacy-dialog" aria-labelledby="privacy-title">
 <h2 id="privacy-title">Privacy Notice</h2>
-<p>This preview does not send or store your account details or passwords. Account authentication and social sign-in are not connected. Passwords are cleared when the preview form is submitted.</p>
+<p>This preview keeps your name and email in browser session storage to personalize the dashboard. It never stores passwords. Account authentication and social sign-in are not connected. Passwords are cleared when the preview form is submitted.</p>
 <form method="dialog">
 <button>Close</button>
 </form>
 </dialog>
-<script src="assets/vendor/gsap.min.js" defer></script>
-<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="assets/js/scroll-animations.js" defer></script>
 <script src="assets/js/box-effects.js" defer></script>
 </body>

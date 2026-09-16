@@ -13,25 +13,13 @@
 <link rel="stylesheet" href="assets/components.css">
 <link rel="stylesheet" href="assets/header.css">
 <link rel="stylesheet" href="assets/responsive.css">
+<link rel="stylesheet" href="assets/site-updates.css">
+<script src="assets/js/site-navigation.js" defer></script>
+<link rel="stylesheet" href="assets/motion.css">
+<script src="assets/js/hero-interaction.js" defer></script>
 </head>
 <body>
-<header class="header container">
-<a href="index.html" aria-label="Stackly home">
-<img class="brand-logo" src="assets/images/stackly-logo.webp" width="500" height="100" alt="Stackly">
-</a>
-<nav class="navigation" id="navigation" aria-label="Main navigation">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="about.html">About us</a>
-<a href="contact.html">Contact us</a>
-<a href="blogs.html" aria-current="page">Blogs</a>
-</nav>
-<div class="header-auth" aria-label="Account">
-<a class="button" href="login.html">Login</a>
-<a class="button primary" href="signup.html">Sign Up</a>
-</div>
-<button class="menu-toggle" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
-</header>
+<header class="header container"><a class="brand" href="index.html" aria-label="Stackly home"><img class="brand-logo" src="assets/images/stackly-logo.webp" width="140" height="28" alt="Stackly"></a><nav class="navigation" id="site-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="blogs.html" aria-current="page">Blog</a><a href="contact.html">Contact</a></nav><div class="header-auth"><a class="button" href="login.html">Login</a><a class="button primary" href="signup.html">Sign Up</a></div><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-navigation" aria-expanded="false">☰</button></header>
 <main>
 <section class="page-hero">
 <div class="hero-inner">
@@ -172,6 +160,8 @@
 </div>
 </div>
 </section>
+<section class="section"><div class="container"><div class="section-heading"><p class="eyebrow">Reading paths</p><h2>Find a starting point for your next project</h2></div><div class="grid"><article class="card"><h3>Starting with a drawing</h3><p>Explore design preparation and material selection to build a brief your manufacturing team can use.</p></article><article class="card"><h3>Improving a process</h3><p>Read about inspection and automation to understand the decisions behind repeatable production.</p></article><article class="card"><h3>Planning for delivery</h3><p>Explore supply chain coordination and resource-conscious manufacturing as part of the wider production plan.</p></article></div></div></section>
+<section class="section"><div class="container"><div class="section-heading"><p class="eyebrow">From insight to action</p><h2>Turn your reading into useful questions</h2></div><div class="grid"><article class="card"><h3>Compare with your application</h3><p>Record which ideas fit your component, production volume and operating environment.</p></article><article class="card"><h3>Discuss the tradeoffs</h3><p>Bring questions about cost, finish and manufacturability to your next engineering review.</p></article><article class="card"><h3>Document the decision</h3><p>Capture the agreed approach in your specification so the next stage starts with clear requirements.</p></article></div></div></section>
 <section class="cta">
 <p class="eyebrow">Keep learning</p>
 <h2>Stay Ahead of the Curve</h2>
@@ -180,41 +170,13 @@
 <label for="newsletter-email">Email address</label>
 <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Enter your email address" required>
 <button class="button" type="submit">Subscribe</button>
-<p class="form-note">Opens an email subscription request.</p>
+<p class="form-note">Enter a valid email address to continue.</p>
 <p class="form-status" role="status" aria-live="polite">
 </p>
 </form>
 </section>
 </main>
-<footer class="site-footer">
-<div class="container">
-<div class="footer-grid">
-<div>
-<span class="footer-wordmark">Stackly</span>
-<p>Precision engineering. Reliable manufacturing. Built around your business.</p>
-</div>
-<nav aria-label="Company">
-<h2>Company</h2>
-<a href="about.html">About us</a>
-<a href="services.html">Our services</a>
-<a href="contact.html">Contact us</a>
-</nav>
-<nav aria-label="Resources">
-<h2>Resources</h2>
-<a href="blogs.html">Blogs &amp; articles</a>
-</nav>
-<div>
-<h2>Contact</h2>
-<a href="mailto:hello@Stackly.net.in">hello@Stackly.net.in</a>
-<a href="tel:+918905246537">+91 89052 46537</a>
-<address>MMR Complex, Chinna Thirupathi,<br>Salem, Tamil Nadu 636008</address>
-</div>
-</div>
-<div class="footer-bottom">&copy; 2026 Stackly Technologies. All rights reserved.</div>
-</div>
-</footer>
-<script src="assets/vendor/gsap.min.js" defer></script>
-<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<footer class="site-footer unified-footer"><div class="footer-columns"><div class="footer-brand"><a class="brand" href="index.html" aria-label="Stackly home"><img class="brand-logo" src="assets/images/stackly-logo.webp" width="140" height="28" alt="Stackly"></a><p>Precision engineering and industrial manufacturing, from your first drawing to the final delivery.</p></div><nav class="footer-column" aria-label="Quick Links"><h2>Quick Links</h2><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="blogs.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav><nav class="footer-column" aria-label="Resources"><h2>Resources</h2><ul class="footer-links"><li><a href="404.html">Careers</a></li><li><a href="404.html">Support Center</a></li><li><a href="404.html">Integrations</a></li><li><a href="404.html">Privacy Policy</a></li><li><a href="404.html">Terms of Service</a></li></ul></nav><div class="footer-column"><h2>Let’s connect</h2><ul class="footer-links"><li><a href="404.html">hello@Stackly.net.in</a></li><li><a href="404.html">+91 89052 46537</a></li></ul><address>MMR Complex, Chinna Thirupathi,<br>Salem, Tamil Nadu 636008</address><div class="footer-social"><a href="404.html" aria-label="linkedin"><img src="assets/icons/linkedin.webp" alt="" width="18" height="18"></a><a href="404.html" aria-label="instagram"><img src="assets/icons/instagram.webp" alt="" width="18" height="18"></a><a href="404.html" aria-label="twitter"><img src="assets/icons/twitter.webp" alt="" width="18" height="18"></a></div></div></div><div class="footer-bottom"><p>© 2026 Stackly Technologies. All rights reserved.</p><span>Built around your business.</span></div></footer>
 <script src="assets/js/scroll-animations.js" defer></script>
 <script src="assets/js/box-effects.js" defer></script>
 </body>

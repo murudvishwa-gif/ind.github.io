@@ -1,0 +1,33 @@
+(() => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggle = document.querySelector('.mobile-menu');
+  if (!sidebar || !toggle) return;
+  const mobile = matchMedia('(max-width: 700px)');
+  const placeholder = document.createComment('Workspace sidebar');
+  sidebar.before(placeholder);
+  const dialog = document.createElement('dialog');
+  dialog.id = 'workspace-navigation';
+  dialog.className = 'mobile-navigation-dialog workspace-navigation-dialog';
+  dialog.setAttribute('aria-label', 'Workspace navigation');
+  dialog.innerHTML = '<div class="mobile-navigation-top"><div class="workspace-menu-brand"></div><button type="button" class="workspace-menu-close mobile-navigation-close" aria-label="Close workspace navigation" autofocus>✕</button></div>';
+  dialog.querySelector('.workspace-menu-brand').append(sidebar.querySelector('.brand').cloneNode(true));
+  document.body.append(dialog);
+  toggle.setAttribute('aria-controls', dialog.id);
+  toggle.setAttribute('aria-haspopup', 'dialog');
+  const reset = () => { document.documentElement.classList.remove('navigation-modal-open'); toggle.setAttribute('aria-expanded', 'false'); sidebar.classList.remove('open'); };
+  const close = () => { if (dialog.open) dialog.close(); reset(); };
+  const layout = () => { close(); if (mobile.matches) dialog.append(sidebar); else placeholder.after(sidebar); };
+  toggle.onclick = () => {
+    if (!mobile.matches) return;
+    dialog.showModal(); sidebar.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.documentElement.classList.add('navigation-modal-open');
+  };
+  dialog.querySelector('.workspace-menu-close').onclick = close;
+  dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
+  dialog.addEventListener('close', () => { if (!dialog.open) reset(); });
+  dialog.addEventListener('click', event => { if (event.target.closest('a')) close(); });
+  document.addEventListener('dashboard:view', close);
+  mobile.addEventListener('change', layout);
+  layout();
+})();

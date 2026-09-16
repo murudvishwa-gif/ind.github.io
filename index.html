@@ -120,6 +120,9 @@
     .stat dt { order: 2; color: var(--accent); font-size: 15px; line-height: 1.4; }
     .stat dd { margin: 0; font-size: 42px; line-height: 1.15; font-weight: 700; letter-spacing: .5px; }
     .testimonials { padding: 94px 74px; border-bottom: 1px solid #82301b; }
+    .testimonials .section-heading { margin: 0 auto 42px; text-align: center; }
+    .testimonials .eyebrow { margin-bottom: 16px; }
+    .testimonials h2 { margin: 0; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.2; letter-spacing: -.5px; }
     .testimonial-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
     .testimonial-card { margin: 0; padding: 28px 30px 30px; border: 1px solid #e2e7e6; border-radius: 24px; background: #feffff; color: #172e52; box-shadow: 0 18px 45px #1745414d; display: flex; flex-direction: column; align-items: center; text-align: center; }
     .quote-mark { display: block; height: 47px; margin-bottom: 14px; color: var(--accent); font-family: Georgia, serif; font-size: 64px; line-height: 1; }
@@ -182,38 +185,34 @@
 <link rel="stylesheet" href="assets/components.css">
 <link rel="stylesheet" href="assets/header.css">
 <link rel="stylesheet" href="assets/responsive.css">
+<link rel="stylesheet" href="assets/site-updates.css">
+<script src="assets/js/site-navigation.js" defer></script>
+<link rel="stylesheet" href="assets/motion.css">
+<script src="assets/js/hero-interaction.js" defer></script>
 </head>
 <body>
-  <header class="header container">
-<a href="index.html" aria-label="Stackly home">
-<img class="brand-logo" src="assets/images/stackly-logo.webp" width="500" height="100" alt="Stackly">
-</a>
-<nav class="navigation" id="navigation" aria-label="Main navigation">
-<a href="index.html" aria-current="page">Home</a>
-<a href="services.html">Services</a>
-<a href="about.html">About us</a>
-<a href="contact.html">Contact us</a>
-<a href="blogs.html">Blogs</a>
-</nav>
-<div class="header-auth" aria-label="Account">
-<a class="button" href="login.html">Login</a>
-<a class="button primary" href="signup.html">Sign Up</a>
-</div>
-<button class="menu-toggle" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
-</header>
+  <header class="header container"><a class="brand" href="index.html" aria-label="Stackly home"><img class="brand-logo" src="assets/images/stackly-logo.webp" width="140" height="28" alt="Stackly"></a><nav class="navigation" id="site-navigation" aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="blogs.html">Blog</a><a href="contact.html">Contact</a></nav><div class="header-auth"><a class="button" href="login.html">Login</a><a class="button primary" href="signup.html">Sign Up</a></div><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-navigation" aria-expanded="false">☰</button></header>
   <main>
     <section class="hero container" id="home" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">Turning ideas into reality</p>
         <h1 id="hero-title">Transforming Raw<br>into Perfect Products</h1>
         <p class="description">Delivering unmatched quality with every product we create. Our team combines state-of-the-art technology and expert craftsmanship to meet your expectations.</p>
-        <div class="actions"><a class="button primary get-started" href="contact.html"><span>Get Started</span></a><a class="button learn-more" href="#about"><span>Learn More</span></a></div>
+        <div class="actions"><a class="button primary get-started" href="404.html"><span>Get Started</span></a><a class="button learn-more" href="404.html"><span>Learn More</span></a></div>
       </div>
       <figure class="hero-media">
         <img src="assets/images/hero.webp" alt="Blue performance car showing precision-crafted automotive bodywork" width="1800" height="1000" fetchpriority="high">
         <div class="badge growth"><strong>1,812+</strong><small>Increased of 14% this month</small></div>
         <div class="badge clients"><strong>Over 1k clients satisfied</strong><small>with our recent work</small></div>
       </figure>
+      <div class="hero-explorer">
+        <div class="hero-tabs" role="tablist" aria-label="Explore our manufacturing process">
+          <button type="button" role="tab" id="stage-engineer" aria-selected="true" aria-controls="hero-stage" tabindex="0">01 Engineer</button>
+          <button type="button" role="tab" id="stage-manufacture" aria-selected="false" aria-controls="hero-stage" tabindex="-1">02 Manufacture</button>
+          <button type="button" role="tab" id="stage-verify" aria-selected="false" aria-controls="hero-stage" tabindex="-1">03 Verify</button>
+        </div>
+        <div class="hero-stage" id="hero-stage" role="tabpanel" aria-labelledby="stage-engineer" tabindex="0"><span class="stage-label">01 / Engineer</span><h2>A better part starts with a better plan.</h2><p>Translate drawings, materials and performance requirements into a practical production plan.</p></div>
+      </div>
       <p class="trusted">Trusted by 100+ famous companies</p>
       <div class="partners" aria-label="Trusted companies"><span>NORDVEK</span><span>AXOLINE</span><span>FERRUM</span><span>VOLTARA</span><span>KRONEX</span></div>
     </section>
@@ -282,19 +281,7 @@
 </a>
       </div>
     </section>
-    <section class="why-choose container" aria-labelledby="why-title">
-      <h2 id="why-title">Why Choose Stackly</h2>
-      <p class="section-description">A robust set of next-generation features specifically designed to take the guesswork out of fleet tracking and logistics dispatch.</p>
-      <div class="benefits-grid">
-        <article class="benefit-card ui-card">
-          <div class="benefit-icon"><img class="feature-icon" src="assets/icons/zap.webp" width="22" height="22" alt=""></div>
-          <h3><a href="contact.html">Automated Dispatch</a></h3>
-          <p>Eliminate manually coordinated load matching. AI dispatch automatically schedules the most optimal drivers.</p>
-        </article>
-        undefined
-        undefined
-      </div>
-    </section>
+    <section class="why-choose container"><div class="why-intro"><div><p class="eyebrow">The Stackly difference</p><h2>Built on precision.<br>Backed by people.</h2><p class="section-description">Why choose Stackly? Bring your manufacturing challenges to a team that connects engineering expertise with practical production support.</p></div><div class="why-note"><span>ONE CONNECTED PROCESS</span><p>From design review to dispatch, you get a clear path forward, considered recommendations and visibility into the next step.</p><a class="text-link" href="404.html">Start a conversation ↗</a></div></div><div class="benefits-grid"><article class="benefit-card"><img class="benefit-photo" src="assets/images/quality-assurance.webp" alt="Quality at every handoff" width="640" height="420" loading="lazy"><div class="benefit-copy"><span class="benefit-number">01</span><h3>Quality at every handoff</h3><p>Inspection requirements are agreed before production, with dimensional checks and documentation built into the workflow.</p></div></article><article class="benefit-card"><img class="benefit-photo" src="assets/images/expert-craftsmanship.webp" alt="People who understand your parts" width="640" height="420" loading="lazy"><div class="benefit-copy"><span class="benefit-number">02</span><h3>People who understand your parts</h3><p>Engineering and production teams work together to translate your drawings into a repeatable manufacturing process.</p></div></article><article class="benefit-card"><img class="benefit-photo" src="assets/images/on-time-delivery.webp" alt="Clear plans. Reliable progress." width="640" height="420" loading="lazy"><div class="benefit-copy"><span class="benefit-number">03</span><h3>Clear plans. Reliable progress.</h3><p>Material sourcing, production milestones and dispatch preparation are coordinated around your delivery requirements.</p></div></article></div><div class="why-assurance"><span>Drawing-led planning</span><span>Material traceability</span><span>Dedicated coordination</span><span>Inspection documentation</span></div></section>
     <section class="partnership container" aria-labelledby="partnership-title">
       <div class="partnership-inner">
         <img class="partnership-photo" src="assets/images/consumer-goods.webp" alt="Shelves of goods arranged along a warehouse aisle" width="640" height="520" loading="lazy">
@@ -317,15 +304,23 @@
         <li class="process-step"><span class="step-number" aria-hidden="true">03</span><h3>Go Live</h3><p>Sit back as automated routing launches, optimization processes trigger, and dashboard insights populate instantly.</p></li>
       </ol>
     </section>
-    <section class="stats container" aria-label="Stackly in numbers">
+    <section class="stats container stats-marquee" aria-label="Stackly in numbers">
+      <div class="stats-window">
+      <div class="stats-track">
       <dl class="stats-list">
         <div class="stat"><dt>Partners Active Globally</dt><dd>500+</dd></div>
         <div class="stat"><dt>Shipments Delivered Daily</dt><dd>50,000+</dd></div>
         <div class="stat"><dt>Uptime Guarantee</dt><dd>99.9%</dd></div>
         <div class="stat"><dt>Average Cost Savings</dt><dd>30%</dd></div>
       </dl>
+      </div>
+      </div>
     </section>
-    <section class="testimonials container" aria-label="What our clients say">
+    <section class="testimonials container" aria-labelledby="testimonials-title">
+      <div class="section-heading">
+        <p class="eyebrow">Client Testimonials</p>
+        <h2 id="testimonials-title">What Our Clients Say</h2>
+      </div>
       <div class="testimonial-grid">
         <figure class="testimonial-card">
 
@@ -350,53 +345,14 @@
     <section class="closing-cta container" aria-labelledby="cta-title">
       <h2 id="cta-title">Transform Your<br>Manufacturing with Us</h2>
       <p>Let Stackly help you elevate your manufacturing capabilities.</p>
-      <a class="button primary" href="#services">Explore Our Services</a>
+      <a class="button primary" href="404.html">Explore Our Services</a>
     </section>
-  </main>
-  <footer class="site-footer container">
-    <div class="footer-columns">
-      <div class="footer-brand">
-        <p><strong>Stackly</strong></p>
-        <p>Precision engineering and industrial manufacturing solutions built around your business.</p>
-      </div>
-      <nav class="footer-column" aria-label="Company">
-        <h2>Company</h2>
-        <ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Solutions</a></li><li><a href="mailto:hello@Stackly.net.in?subject=Career%20enquiry">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
-      </nav>
-      <nav class="footer-column" aria-label="Resources">
-        <h2>Resources</h2>
-        <ul class="footer-links"><li><a href="blogs.html">Blogs &amp; Articles</a></li><li><a href="services.html">Service Capabilities</a></li><li><a href="mailto:hello@Stackly.net.in?subject=Support%20enquiry">Support Center</a></li><li><a href="#how-it-works">Integrations</a></li></ul>
-      </nav>
-      <div class="footer-column" id="contact">
-        <h2>Contact</h2>
-        <ul class="footer-links"><li><a href="mailto:hello@Stackly.net.in">hello@Stackly.net.in</a></li><li><a href="tel:+918905246537">+91 89052 46537</a></li></ul>
-        <address>MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</address>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Stackly Technologies. All rights reserved.</p>
-      
-    </div>
-  </footer>
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const navigation = document.querySelector('.navigation');
-    toggle.addEventListener('click', () =>{
-      const open = toggle.getAttribute('aria-expanded') !== 'true';
-      toggle.setAttribute('aria-expanded', String(open));
-      navigation.classList.toggle('open', open);
-    });
-    navigation.addEventListener('click', event =>{
-      if (event.target.closest('a')) {
-        toggle.setAttribute('aria-expanded', 'false');
-        navigation.classList.remove('open');
-      }
-    });
-  </script>
-<script src="assets/vendor/gsap.min.js" defer></script>
-<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <section class="editorial-section container"><div class="section-heading"><p class="eyebrow">Applications in focus</p><h2>Expertise that travels across industries</h2></div><div class="editorial-grid"><article class="editorial-card"><img src="assets/images/aerospace.webp" alt="Aerospace components" loading="lazy" width="640" height="420"><div><h3>Aerospace components</h3><p>Careful process planning for complex geometries, demanding materials and precision assemblies.</p></div></article><article class="editorial-card"><img src="assets/images/electronics.webp" alt="Electronics & enclosures" loading="lazy" width="640" height="420"><div><h3>Electronics & enclosures</h3><p>Practical fabrication and finishing for housings, mounting systems and connected equipment.</p></div></article><article class="editorial-card"><img src="assets/images/construction.webp" alt="Infrastructure that lasts" loading="lazy" width="640" height="420"><div><h3>Infrastructure that lasts</h3><p>Structural parts and fabricated assemblies designed around real installation requirements.</p></div></article></div></section></main>
+  <footer class="site-footer unified-footer"><div class="footer-columns"><div class="footer-brand"><a class="brand" href="index.html" aria-label="Stackly home"><img class="brand-logo" src="assets/images/stackly-logo.webp" width="140" height="28" alt="Stackly"></a><p>Precision engineering and industrial manufacturing, from your first drawing to the final delivery.</p></div><nav class="footer-column" aria-label="Quick Links"><h2>Quick Links</h2><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="blogs.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav><nav class="footer-column" aria-label="Resources"><h2>Resources</h2><ul class="footer-links"><li><a href="404.html">Careers</a></li><li><a href="404.html">Support Center</a></li><li><a href="404.html">Integrations</a></li><li><a href="404.html">Privacy Policy</a></li><li><a href="404.html">Terms of Service</a></li></ul></nav><div class="footer-column"><h2>Let’s connect</h2><ul class="footer-links"><li><a href="404.html">hello@Stackly.net.in</a></li><li><a href="404.html">+91 89052 46537</a></li></ul><address>MMR Complex, Chinna Thirupathi,<br>Salem, Tamil Nadu 636008</address><div class="footer-social"><a href="404.html" aria-label="linkedin"><img src="assets/icons/linkedin.webp" alt="" width="18" height="18"></a><a href="404.html" aria-label="instagram"><img src="assets/icons/instagram.webp" alt="" width="18" height="18"></a><a href="404.html" aria-label="twitter"><img src="assets/icons/twitter.webp" alt="" width="18" height="18"></a></div></div></div><div class="footer-bottom"><p>© 2026 Stackly Technologies. All rights reserved.</p><span>Built around your business.</span></div></footer>
+  
 <script src="assets/js/scroll-animations.js" defer></script>
 <script src="assets/js/box-effects.js" defer></script>
+<script src="assets/js/stats-marquee.js" defer></script>
 </body>
 </html>
 

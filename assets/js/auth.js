@@ -1,7 +1,7 @@
 (() => {
   document.querySelectorAll('[data-provider]').forEach(button => {
     button.addEventListener('click', () => {
-      document.getElementById('provider-status').textContent = `${button.dataset.provider} sign-in is not connected in this preview. No account details have been sent.`;
+      window.location.assign('404.html');
     });
   });
   document.querySelectorAll('[data-dialog]').forEach(link => {
